@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderTitleService } from '../services/header-title.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   userName: string = "Kevin";
-  
+  title: string;
 
-  constructor() { }
+  constructor(private headerTitleService: HeaderTitleService) { }
 
   ngOnInit(): void {
+    this.title = this.headerTitleService.getTitle();
   }
 
 }
