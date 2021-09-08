@@ -8,6 +8,7 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
   @Output() login = new EventEmitter<boolean>();
+  todaysPlate: Date = new Date();
 
   loginOutput(login: boolean ) {
     this.login.emit(login);
